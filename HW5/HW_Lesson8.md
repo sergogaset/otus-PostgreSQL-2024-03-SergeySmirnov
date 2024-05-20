@@ -133,7 +133,7 @@ UPDATE randomik SET name = md5(random()::text || clock_timestamp()::text);
 ![scrin-12](./images/scrin-12.jpg)
 
 ## 11. Посмотреть количество мертвых строчек в таблице и когда последний раз приходил автовакуум
-Посмотрел количество мертвых строк и информацию об autovaacum командой:  
+Посмотрел количество мертвых строк и информацию об autovacuum командой:  
 ```
 SELECT relname, n_live_tup, n_dead_tup,
 trunc(100*n_dead_tup/(n_live_tup+1))::float AS "ratio%", last_autovacuum
@@ -156,7 +156,7 @@ SELECT relname, n_live_tup, n_dead_tup,
 trunc(100*n_dead_tup/(n_live_tup+1))::float AS "ratio%", last_autovacuum
 FROM pg_stat_user_tables;
 ```
-Autovaacum прошел:  
+Autovacuum прошел:  
 
 ![scrin-15](./images/scrin-15.jpg)
 
